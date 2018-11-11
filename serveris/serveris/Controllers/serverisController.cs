@@ -25,6 +25,8 @@ namespace serveris.Controllers
             }
         }
          
+
+        // GET METODAS
         [HttpGet]
         public ActionResult<List<serverisItem>> GetAll()
         {
@@ -40,6 +42,49 @@ namespace serveris.Controllers
                 return NotFound();
             }
             return item;
+        }
+
+        //POST METODAS
+        [HttpPost]
+        public IActionResult Create(serverisItem item)
+        {
+            _context.serverisItems.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("Getserveris", new { id = item.Id }, item);
+        }
+
+        //UPDATE METODAS
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, serverisItem item)
+        {
+            var todo = _context.serverisItems.Find(id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            todo.IsComplete = item.IsComplete;
+            todo.Name = item.Name;
+
+            _context.serverisItems.Update(todo);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        //DELETE METODAS
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var todo = _context.serverisItems.Find(id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            _context.serverisItems.Remove(todo);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
