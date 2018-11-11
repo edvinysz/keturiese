@@ -1,0 +1,14 @@
+E:\keturiese\serveris\serveris\bin\Debug\netcoreapp2.1\serveris.deps.json
+E:\keturiese\serveris\serveris\bin\Debug\netcoreapp2.1\serveris.runtimeconfig.json
+E:\keturiese\serveris\serveris\bin\Debug\netcoreapp2.1\serveris.runtimeconfig.dev.json
+E:\keturiese\serveris\serveris\bin\Debug\netcoreapp2.1\serveris.dll
+E:\keturiese\serveris\serveris\bin\Debug\netcoreapp2.1\serveris.pdb
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.csprojAssemblyReference.cache
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.csproj.CoreCompileInputs.cache
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.RazorAssemblyInfo.cache
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.RazorAssemblyInfo.cs
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.AssemblyInfoInputs.cache
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.AssemblyInfo.cs
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.RazorTargetAssemblyInfo.cache
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.dll
+E:\keturiese\serveris\serveris\obj\Debug\netcoreapp2.1\serveris.pdb
