@@ -27,6 +27,7 @@ namespace serveris
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<serverisContext>(opt => opt.UseInMemoryDatabase("TodoList"));
+            services.AddDbContext<PlayerContext>(opt => opt.UseInMemoryDatabase("Players"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

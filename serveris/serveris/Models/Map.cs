@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace serveris.Models
 {
-    public class Player : Position
+    public class Map
     {
         public long Id { get; set; }
-        public string Username { get; set; }
-        public int DeathCount { get; set; }
+        public string Name { get; set; }
+        public List<BlockInGame> Blocks { get; set; }
     }
 }

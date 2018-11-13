@@ -10,6 +10,7 @@ namespace serveris.Models
         public long Id { get; set; }
         public string GameTitle { get; set; }
         public long MapId { get; set; }
+        public double GameTime { get; set; }
         public long Player1Id { get; set; }
         public long Player2Id { get; set; }
         public long Player3Id { get; set; }

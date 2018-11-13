@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace serveris.Models
 {
-    public class Player : Position
+    public class Image
     {
         public long Id { get; set; }
-        public string Username { get; set; }
-        public int DeathCount { get; set; }
+        public string Link { get; set; }
     }
 }
