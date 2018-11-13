@@ -17,6 +17,7 @@ $(document).ready(function () {
     getData();
 });
 
+//GET METODAS
 function getData() {
     $.ajax({
         type: "GET",
@@ -64,6 +65,7 @@ function getData() {
     });
 }
 
+//POST METODAS
 function addItem() {
     const item = {
         name: $("#add-name").val(),
@@ -86,6 +88,7 @@ function addItem() {
     });
 }
 
+//DELETE METODAS
 function deleteItem(id) {
     $.ajax({
         url: uri + "/" + id,
@@ -96,6 +99,7 @@ function deleteItem(id) {
     });
 }
 
+//UPDATE METODAS
 function editItem(id) {
     $.each(todos, function (key, item) {
         if (item.id === id) {
