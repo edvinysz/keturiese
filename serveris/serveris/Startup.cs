@@ -28,6 +28,11 @@ namespace serveris
         {
             services.AddDbContext<serverisContext>(opt => opt.UseInMemoryDatabase("TodoList"));
             services.AddDbContext<PlayerContext>(opt => opt.UseInMemoryDatabase("Players"));
+            services.AddDbContext<PositionContext>(opt => opt.UseInMemoryDatabase("Positions"));
+            services.AddDbContext<BlockInGameContext>(opt => opt.UseInMemoryDatabase("BlocksInGame"));
+            services.AddDbContext<GameInfoContext>(opt => opt.UseInMemoryDatabase("GameInfos"));
+            services.AddDbContext<ImageContext>(opt => opt.UseInMemoryDatabase("Images"));
+            services.AddDbContext<MapContext>(opt => opt.UseInMemoryDatabase("Maps"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

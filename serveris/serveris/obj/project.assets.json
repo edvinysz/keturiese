@@ -11502,23 +11502,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vartotojas\\.nuget\\packages\\": {},
+    "C:\\Users\\GAMEBOX\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vartotojas\\Documents\\GitHub\\keturiese\\serveris\\serveris\\serveris.csproj",
+      "projectUniqueName": "E:\\keturiese\\serveris\\serveris\\serveris.csproj",
       "projectName": "serveris",
-      "projectPath": "C:\\Users\\Vartotojas\\Documents\\GitHub\\keturiese\\serveris\\serveris\\serveris.csproj",
-      "packagesPath": "C:\\Users\\Vartotojas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vartotojas\\Documents\\GitHub\\keturiese\\serveris\\serveris\\obj\\",
+      "projectPath": "E:\\keturiese\\serveris\\serveris\\serveris.csproj",
+      "packagesPath": "C:\\Users\\GAMEBOX\\.nuget\\packages\\",
+      "outputPath": "E:\\keturiese\\serveris\\serveris\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Vartotojas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\GAMEBOX\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
