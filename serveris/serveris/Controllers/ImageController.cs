@@ -7,7 +7,7 @@ using serveris.Models;
 
 namespace serveris.Controllers
 {
-    [Route("api/block")]
+    [Route("api/image")]
     [ApiController]
     public class ImageController : ControllerBase
     {
