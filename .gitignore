@@ -1,2 +1,6 @@
 /clientServer/.vs/
 /serveris/.vs/
+/ClientServer/GameClient/bin/Debug/
+/ClientServer/GameClient/obj/Debug/
+/ClientServer/Server/bin/Debug/
+/ClientServer/Server/obj/Debug/
