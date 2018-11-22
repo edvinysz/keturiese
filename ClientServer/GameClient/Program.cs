@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Server.Models;
 using Client.Task;
+using Server.Observers.Gameplay;
 
 namespace GameClient
 {
@@ -71,6 +72,7 @@ namespace GameClient
                             break;
                         case ConsoleKey.D5:
                             Console.WriteLine("Observer pattern");
+                            await executeObserverPattern();
                             break;
                         case ConsoleKey.D6:
                             Console.WriteLine("Builder pattern");
@@ -118,5 +120,27 @@ namespace GameClient
             BlockTaskAbstractFactory.createBlock();
         }
 
+        static async Task executeObserverPattern()
+        {
+            Console.WriteLine("Create a few players");
+
+            List<Player> players = new List<Player>();
+
+            players.Add(new Player { Id = 55, Username = "Antanas", DeathCount = 0 });
+            players.Add(new Player { Id = 66, Username = "Paulius", DeathCount = 1 });
+            players.Add(new Player { Id = 54, Username = "Gabrielius", DeathCount = 1 });
+
+            Console.WriteLine("Initialize observer instance");
+            StatusObserver gameplayStatusObserver = new StatusObserver();
+
+            Console.WriteLine("Add players to observer subscribers");
+            foreach (Player player in players)
+            {
+                gameplayStatusObserver.add(player);
+            }
+
+            Console.WriteLine("Imitate gameplay status change");
+            gameplayStatusObserver.notifyAll("Game finished");
+        }
     }
 }

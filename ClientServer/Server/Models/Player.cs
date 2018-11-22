@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Server.Observers;
 
 namespace Server.Models
 {
-    public class Player : Position
+    public class Player : Position, IObserver
     {
-        /**private int Id;
-        private string Username;
-        private int DeathCount;*/
         public long Id { get; set; }
         public string Username { get; set; }
         public int DeathCount { get; set; }
 
-        /**public Player(int id, string username, int deathCount)
+        public void notify(string message)
         {
-            this.Id = id;
-            this.Username = username;
-            this.DeathCount = deathCount;
-        }*/
+            Console.WriteLine("Player " + Username + " notified: \"" + message + "\"");
+        }
     }
 }
