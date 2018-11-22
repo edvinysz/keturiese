@@ -64,6 +64,7 @@ namespace GameClient
                             break;
                         case ConsoleKey.D3:
                             Console.WriteLine("Abstract Factory pattern");
+                            await executeAbstractFactoryPattern();
                             break;
                         case ConsoleKey.D4:
                             Console.WriteLine("Strategy pattern");
@@ -110,6 +111,11 @@ namespace GameClient
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        static async Task executeAbstractFactoryPattern()
+        {
+            BlockTaskAbstractFactory.createBlock();
         }
 
     }

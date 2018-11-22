@@ -10,8 +10,25 @@ namespace Server.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public long ImageId { get; set; }
-        public string Type { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+        public int Damage { get; set; }
+
+        public Block(long id, string n, long img, int h, int w, int dmg)
+        {
+            Id = id;
+            Name = n;
+            ImageId = img;
+            Width = w;
+            Height = h;
+            Damage = dmg;
+        }
+
+        protected Block(long id)
+        {
+            Id = id;
+        }
+
+        public Block() { }
     }
 }

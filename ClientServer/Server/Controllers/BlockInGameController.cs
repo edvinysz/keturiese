@@ -20,7 +20,7 @@ namespace Server.Controllers
             if (_context.BlocksInGame.Count() == 0)
             {
                 //sukuriam nauja BlockInGame jei empty, reiskia negalim istrint visu BlockInGames
-                _context.BlocksInGame.Add(new BlockInGame { Name = "Block 1" });
+              //  _context.BlocksInGame.Add(new BlockInGame { Name = "Block 1" });
                 _context.SaveChanges();
             }
         }

@@ -12,5 +12,15 @@ namespace Server.Models
         public bool IsFinish { get; set; }
         public bool GiveDamage { get; set; }
         public long PositionId { get; set; }
+
+        public BlockInGame(long id, long b, bool fin, bool dmg, long pst) : base(id)
+        {
+            Id = id;
+            BlockId = b;
+            IsFinish = fin;
+            GiveDamage = dmg;
+            PositionId = pst;
+        }
+
     }
 }
