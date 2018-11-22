@@ -30,5 +30,11 @@ namespace Server.Models
         }
 
         public Block() { }
+
+        public override string ToString()
+        {
+            return "Block info | Id: " + Id + ", Name: " + Name + ", ImageId: " 
+                + ImageId + ", Width: " + Width + ", Height: " + Height + ", Damage: " + Damage;
+        }
     }
 }

@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Server.Models;
 using Client.Task;
 using Server.Observers.Gameplay;
+using Server.Builders.Block;
 
 namespace GameClient
 {
@@ -76,6 +77,7 @@ namespace GameClient
                             break;
                         case ConsoleKey.D6:
                             Console.WriteLine("Builder pattern");
+                            await executeBuilderPattern();
                             break;
                         case ConsoleKey.D7:
                             Console.WriteLine("Prototype pattern");
@@ -141,6 +143,29 @@ namespace GameClient
 
             Console.WriteLine("Imitate gameplay status change");
             gameplayStatusObserver.notifyAll("Game finished");
+        }
+
+        static async Task executeBuilderPattern()
+        {
+            Console.WriteLine("Initialize block builder");
+            HarmfulBlockBuilder harmfulBlockBuilder = new HarmfulBlockBuilder();
+
+            Console.WriteLine("Create blocks through builder");
+            Block deadlyBlock1 = harmfulBlockBuilder.create().setId(15).setName("Smegduobe").setImageId(11)
+                .setWidth(3).setHeight(4).setDamage(22).build();
+
+            Block deadlyBlock2 = harmfulBlockBuilder.create().setId(16).setName("Viniu kalnas").setImageId(21)
+                .setWidth(4).setHeight(10).setDamage(2).build();
+
+            List<Block> blocks = new List<Block>();
+
+            blocks.Add(deadlyBlock1);
+            blocks.Add(deadlyBlock2);
+
+            foreach (Block block in blocks)
+            {
+                Console.WriteLine(block);
+            }
         }
     }
 }
