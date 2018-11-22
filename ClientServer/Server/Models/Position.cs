@@ -7,10 +7,10 @@ namespace Server.Models
 {
     public abstract class Position
     {
-        public abstract long Id { get; set; }
-        public abstract string Type { get; }
-        public abstract int PositionX { get; set; }
-        public abstract int PositionY { get; set; }
+        public virtual long Id { get { return Id; } set { Id = value; } }
+        public virtual string Type { get { return Type; } set { Type = value; } }
+        public virtual int PositionX { get { return PositionX; } set { PositionX = value; } }
+        public virtual int PositionY { get { return PositionY; } set { PositionY = value; } }
     }
 
     /// <summary>

@@ -20,7 +20,7 @@ namespace Server.Controllers
             if (_context.Positions.Count() == 0)
             {
                 //sukuriam nauja Position jei empty, reiskia negalim istrint visu Positions
-                _context.Positions.Add(new Position { PositionX = 0, PositionY = 0 });
+               // _context.Positions.Add(new Position { PositionX = 0, PositionY = 0 });
                 _context.SaveChanges();
             }
         }
