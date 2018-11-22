@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Server.Models
 {
-    public class Block
+    public class Block : Position
     {
         public long Id { get; set; }
         public string Name { get; set; }

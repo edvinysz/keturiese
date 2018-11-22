@@ -3053,37 +3053,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\GAMEBOX\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\oppgit\\keturiese\\ClientServer\\GameClient\\Client.csproj",
+      "projectUniqueName": "E:\\keturiese\\ClientServer\\GameClient\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\User\\oppgit\\keturiese\\ClientServer\\GameClient\\Client.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\oppgit\\keturiese\\ClientServer\\GameClient\\obj\\",
+      "projectPath": "E:\\keturiese\\ClientServer\\GameClient\\Client.csproj",
+      "packagesPath": "C:\\Users\\GAMEBOX\\.nuget\\packages\\",
+      "outputPath": "E:\\keturiese\\ClientServer\\GameClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\GAMEBOX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\User\\oppgit\\keturiese\\ClientServer\\Server\\Server.csproj": {
-              "projectPath": "C:\\Users\\User\\oppgit\\keturiese\\ClientServer\\Server\\Server.csproj"
+            "E:\\keturiese\\ClientServer\\Server\\Server.csproj": {
+              "projectPath": "E:\\keturiese\\ClientServer\\Server\\Server.csproj"
             }
           }
         }

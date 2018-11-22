@@ -56,6 +56,7 @@ namespace GameClient
                     Username = playerUsername,
                     DeathCount = 0
                 };
+                player.fac
             }
             catch (Exception e)
             {
@@ -64,5 +65,6 @@ namespace GameClient
 
             Console.ReadLine();
         }
+
     }
 }
