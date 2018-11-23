@@ -81,6 +81,7 @@ namespace GameClient
                             break;
                         case ConsoleKey.D7:
                             Console.WriteLine("Prototype pattern");
+                            executePrototypePattern();
                             break;
                         case ConsoleKey.D8:
                             Console.WriteLine("Decorator pattern");
@@ -165,6 +166,36 @@ namespace GameClient
             foreach (Block block in blocks)
             {
                 Console.WriteLine(block);
+            }
+        }
+
+        static async Task executePrototypePattern()
+        {
+            Console.WriteLine("Create prototype");
+            Manager gameinfomanager = new Manager();
+            GameInfoPrototype gameinfo = new GameInfoPrototype(0, "test1", 0, 0, -1, -1, -1, -1, 0, 0, false, false);
+            GameInfoPrototype gameinfo2 = new GameInfoPrototype(0, "test1", 0, 100, 1, 2, 3, 4, 4, 0, false, false);
+
+            //initialize standart
+            gameinfomanager["Map1 without players"] = gameinfo;
+
+            //user personalized
+            gameinfomanager["Map1 started"] = gameinfo2;
+
+            //cloning
+            GameInfoPrototype gameinfo1 = gameinfomanager["Map1 without players"].Clone() as GameInfoPrototype;
+        }
+
+        //prototype manager
+        class Manager
+        {
+            private Dictionary<string, GameInfo> _games = new Dictionary<string, GameInfo>();
+
+            //indexer
+            public GameInfo this[string key]
+            {
+                get { return _games[key]; }
+                set { _games.Add(key, value); }
             }
         }
     }

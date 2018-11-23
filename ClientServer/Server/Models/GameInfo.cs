@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Server.Models
 {
-    public class GameInfo
+    public abstract class GameInfo
     {
         public long Id { get; set; }
         public string GameTitle { get; set; }
@@ -19,5 +19,7 @@ namespace Server.Models
         public long ResultTableId { get; set; }
         public bool HasStarted { get; set; }
         public bool HasEnded { get; set; }
+
+        public abstract GameInfo Clone();
     }
 }
