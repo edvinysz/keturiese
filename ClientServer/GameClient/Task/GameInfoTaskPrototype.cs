@@ -26,8 +26,8 @@ namespace Client.Task
             GameInfoTaskPrototype f = new GameInfoTaskPrototype();
             BlockFactory factory = new BlockFactory();
             GameInfo test1 = factory.createEnemyD();
-            f.ShowBlock(test1);
-            f.CreateBlockAsync(test1);
+            f.ShowGameInfo(test1);
+            f.CreateGameInfoAsync(test1);
 
         }
 
