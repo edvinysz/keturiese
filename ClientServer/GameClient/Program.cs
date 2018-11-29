@@ -10,6 +10,8 @@ using Client.Task;
 using Server.Observers.Gameplay;
 using Server.Builders.Block;
 using Server.Decorators;
+using Server.AbstractFactory;
+using Server.Adapter;
 
 namespace GameClient
 {
@@ -48,6 +50,7 @@ namespace GameClient
                 Console.WriteLine("6. Builder pattern");
                 Console.WriteLine("7. Prototype pattern");
                 Console.WriteLine("8. Decorator pattern");
+                Console.WriteLine("9. Adapter pattern");
 
                 while (true)
                 {
@@ -90,6 +93,10 @@ namespace GameClient
                             Console.WriteLine("Decorator pattern");
                             executeDecoratorPattern();
                             break;
+                        case ConsoleKey.D9:
+                            Console.WriteLine("Adapter pattern");
+                            executeAdapterPattern();
+                            break;
                     }
                 }
             }
@@ -99,6 +106,18 @@ namespace GameClient
             }
 
             Console.ReadLine();
+        }
+
+        static async Task executeAdapterPattern()
+        {
+            BlockFactory factoryA = new EnemyBlockFactory();
+            Block test1 = factoryA.CreateEnemyBlock("Deadly");
+            Console.WriteLine($"Id: {test1.Id}\tName: {test1.Name}\tImageId: " + $"{test1.ImageId}\tHeight: " + $"{test1.Height}\tWidth: " + $"{test1.Width}\tDamage: " + $"{test1.Damage}");
+            MoveAdapter adapter = new ConcreteAdapter();
+            adapter.Move(test1);
+            Console.WriteLine("After moving");
+            Console.WriteLine($"Id: {test1.Id}\tName: {test1.Name}\tImageId: " + $"{test1.ImageId}\tHeight: " + $"{test1.Height}\tWidth: " + $"{test1.Width}\tDamage: " + $"{test1.Damage}");
+
         }
 
         static async Task executeSingletonPattern()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Server.Models;
+using Server.AbstractFactory;
 
 namespace Server.Builders.Block
 {
@@ -17,7 +18,8 @@ namespace Server.Builders.Block
 
         public IBlockBuilder create()
         {
-            enemyBlock = new DeadlyBlock(0, "name", 0, 0, 0, 0);
+            BlockFactory factory = new EnemyBlockFactory();
+            enemyBlock = factory.CreateEnemyBlock("Deadly");
 
             return this;
         }
