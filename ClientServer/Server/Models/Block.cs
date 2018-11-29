@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Server.Models
 {
-    public class Block : Position
+    public class Block : Position, IBlock
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -30,6 +30,16 @@ namespace Server.Models
         }
 
         public Block() { }
+
+        public string getName()
+        {
+            return this.Name;
+        }
+
+        public int getDamage()
+        {
+            return this.Damage;
+        }
 
         public override string ToString()
         {

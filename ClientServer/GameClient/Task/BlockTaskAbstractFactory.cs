@@ -23,12 +23,12 @@ namespace Client.Task
 
         public static void createBlock()
         {
-            BlockTaskAbstractFactory f = new BlockTaskAbstractFactory();
+            /*BlockTaskAbstractFactory f = new BlockTaskAbstractFactory();
             BlockFactory factory = new BlockFactory();
             Block test1 = factory.createEnemyD();
             f.ShowBlock(test1);
             f.CreateBlockAsync(test1);
-
+            */
         }
 
         public void ShowBlock(Block block)

@@ -9,6 +9,7 @@ using Server.Models;
 using Client.Task;
 using Server.Observers.Gameplay;
 using Server.Builders.Block;
+using Server.Decorators;
 
 namespace GameClient
 {
@@ -46,7 +47,8 @@ namespace GameClient
                 Console.WriteLine("5. Observer pattern");
                 Console.WriteLine("6. Builder pattern");
                 Console.WriteLine("7. Prototype pattern");
-                    
+                Console.WriteLine("8. Decorator pattern");
+
                 while (true)
                 {
                     Console.WriteLine(new string('-', 40));
@@ -79,12 +81,14 @@ namespace GameClient
                             Console.WriteLine("Builder pattern");
                             await executeBuilderPattern();
                             break;
+
                         case ConsoleKey.D7:
                             Console.WriteLine("Prototype pattern");
                             executePrototypePattern();
                             break;
                         case ConsoleKey.D8:
                             Console.WriteLine("Decorator pattern");
+                            executeDecoratorPattern();
                             break;
                     }
                 }
@@ -197,6 +201,21 @@ namespace GameClient
                 get { return _games[key]; }
                 set { _games.Add(key, value); }
             }
+        }
+
+        static async Task executeDecoratorPattern()
+        {
+            Console.WriteLine("Simple block:");
+            IBlock block = new Block(1, "Block", 1, 1, 1, 20);
+            Console.WriteLine(block);
+
+            Console.WriteLine("Decorated with additional damage:");
+            BlockDecorator strongerBlock = new AdditionalDamage(block);
+            Console.WriteLine(strongerBlock);
+
+            Console.WriteLine("Decorated with fewer damage:");
+            BlockDecorator weakerBlock = new FewerDamage(block);
+            Console.WriteLine(weakerBlock);
         }
     }
 }
