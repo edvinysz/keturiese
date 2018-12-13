@@ -13,6 +13,7 @@ using Server.AbstractFactory;
 using Server.Adapter;
 using Server.Iterators;
 using Server.Iterators.Block;
+using Server.Memento.Player;
 
 namespace GameClient
 {
@@ -56,6 +57,7 @@ namespace GameClient
                 Console.WriteLine("A. Proxy pattern");
                 Console.WriteLine("T. Template pattern");
                 Console.WriteLine("B. Iterator pattern");
+                Console.WriteLine("C. Memento pattern");
 
                 while (true)
                 {
@@ -113,6 +115,10 @@ namespace GameClient
                         case ConsoleKey.B:
                             Console.WriteLine("Iterator pattern:");
                             await executeIteratorPattern();
+                            break;
+                        case ConsoleKey.C:
+                            Console.WriteLine("Memento pattern:");
+                            await executeMementoPattern();
                             break;
                     }
                 }
@@ -271,6 +277,22 @@ namespace GameClient
                 Console.WriteLine(block);
                 block = blockIterator.next();
             }
+        }
+
+        static async Task executeMementoPattern()
+        {
+            PlayerProspect player = new PlayerProspect();
+
+            player.Id = 1;
+            player.Username = "Joe Doe";
+            player.DeathCount = 0;
+
+            PlayerMemory playerMemory = new PlayerMemory();
+            playerMemory.Memento = player.saveMemento();
+
+            player.DeathCount++;
+
+            player.restoreMemento(playerMemory.Memento);
         }
     }
 }
