@@ -54,11 +54,8 @@ namespace GameClient
                 Console.WriteLine("9. Adapter pattern");
                 Console.WriteLine(new string('-', 40));
                 Console.WriteLine("A. Proxy pattern");
-<<<<<<< Updated upstream
                 Console.WriteLine("T. Template pattern");
-=======
                 Console.WriteLine("B. Iterator pattern");
->>>>>>> Stashed changes
 
                 while (true)
                 {
@@ -109,15 +106,13 @@ namespace GameClient
                             Console.WriteLine("Proxy pattern:");
                             await executeProxyPattern();
                             break;
-<<<<<<< Updated upstream
                         case ConsoleKey.T:
                             Console.WriteLine("Template pattern:");
                             await executeTemplatePattern();
-=======
+                            break;
                         case ConsoleKey.B:
                             Console.WriteLine("Iterator pattern:");
                             await executeIteratorPattern();
->>>>>>> Stashed changes
                             break;
                     }
                 }
