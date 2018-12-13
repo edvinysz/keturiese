@@ -81,7 +81,7 @@ namespace GameClient
                             break;
                         case ConsoleKey.D7:
                             Console.WriteLine("Prototype pattern");
-                            executePrototypePattern();
+                            await executePrototypePattern();
                             break;
                         case ConsoleKey.D8:
                             Console.WriteLine("Decorator pattern");
