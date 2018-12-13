@@ -9,6 +9,9 @@ using Server.Models;
 using Client.Task;
 using Server.Observers.Gameplay;
 using Server.Builders.Block;
+using Server.Decorators;
+using Server.AbstractFactory;
+using Server.Adapter;
 
 namespace GameClient
 {
@@ -46,7 +49,9 @@ namespace GameClient
                 Console.WriteLine("5. Observer pattern");
                 Console.WriteLine("6. Builder pattern");
                 Console.WriteLine("7. Prototype pattern");
-                    
+                Console.WriteLine("8. Decorator pattern");
+                Console.WriteLine("9. Adapter pattern");
+
                 while (true)
                 {
                     Console.WriteLine(new string('-', 40));
@@ -79,12 +84,18 @@ namespace GameClient
                             Console.WriteLine("Builder pattern");
                             await executeBuilderPattern();
                             break;
+
                         case ConsoleKey.D7:
                             Console.WriteLine("Prototype pattern");
                             await executePrototypePattern();
                             break;
                         case ConsoleKey.D8:
                             Console.WriteLine("Decorator pattern");
+                            executeDecoratorPattern();
+                            break;
+                        case ConsoleKey.D9:
+                            Console.WriteLine("Adapter pattern");
+                            executeAdapterPattern();
                             break;
                     }
                 }
@@ -95,6 +106,18 @@ namespace GameClient
             }
 
             Console.ReadLine();
+        }
+
+        static async Task executeAdapterPattern()
+        {
+            BlockFactory factoryA = new EnemyBlockFactory();
+            Block test1 = factoryA.CreateEnemyBlock("Deadly");
+            Console.WriteLine($"Id: {test1.Id}\tName: {test1.Name}\tImageId: " + $"{test1.ImageId}\tHeight: " + $"{test1.Height}\tWidth: " + $"{test1.Width}\tDamage: " + $"{test1.Damage}");
+            MoveAdapter adapter = new ConcreteAdapter();
+            adapter.Move(test1);
+            Console.WriteLine("After moving");
+            Console.WriteLine($"Id: {test1.Id}\tName: {test1.Name}\tImageId: " + $"{test1.ImageId}\tHeight: " + $"{test1.Height}\tWidth: " + $"{test1.Width}\tDamage: " + $"{test1.Damage}");
+
         }
 
         static async Task executeSingletonPattern()
@@ -197,6 +220,21 @@ namespace GameClient
                 get { return _games[key]; }
                 set { _games.Add(key, value); }
             }
+        }
+
+        static async Task executeDecoratorPattern()
+        {
+            Console.WriteLine("Simple block:");
+            IBlock block = new Block(1, "Block", 1, 1, 1, 20);
+            Console.WriteLine(block);
+
+            Console.WriteLine("Decorated with additional damage:");
+            BlockDecorator strongerBlock = new AdditionalDamage(block);
+            Console.WriteLine(strongerBlock);
+
+            Console.WriteLine("Decorated with fewer damage:");
+            BlockDecorator weakerBlock = new FewerDamage(block);
+            Console.WriteLine(weakerBlock);
         }
     }
 }

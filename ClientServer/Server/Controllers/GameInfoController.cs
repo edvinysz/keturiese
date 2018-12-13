@@ -20,7 +20,7 @@ namespace Server.Controllers
             if (_context.GameInfos.Count() == 0)
             {
                 //sukuriam nauja BlockInGame jei empty, reiskia negalim istrint visu BlockInGames
-                _context.GameInfos.Add(new GameInfo { GameTitle = "GameInfo 1" });
+                //_context.GameInfos.Add(new GameInfo { GameTitle = "GameInfo 1" });
                 _context.SaveChanges();
             }
         }

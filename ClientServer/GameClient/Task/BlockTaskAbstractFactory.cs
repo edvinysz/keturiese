@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Server.Models;
+using Server.AbstractFactory;
 
 namespace Client.Task
 {
@@ -24,10 +25,20 @@ namespace Client.Task
         public static void createBlock()
         {
             BlockTaskAbstractFactory f = new BlockTaskAbstractFactory();
-            BlockFactory factory = new BlockFactory();
-            Block test1 = factory.createEnemyD();
+            BlockFactory factoryA = new EnemyBlockFactory();
+            BlockFactory factoryB = new NormalBlockFactory();
+            Block test1 = factoryA.CreateEnemyBlock("Deadly");
+            Block test2 = factoryA.CreateEnemyBlock("Harmless");
+            Block test3 = factoryB.CreateNormalBlock("Big");
+            Block test4 = factoryB.CreateEnemyBlock("Small");
             f.ShowBlock(test1);
+            f.ShowBlock(test2);
+            f.ShowBlock(test3);
+            f.ShowBlock(test4);
             f.CreateBlockAsync(test1);
+            f.CreateBlockAsync(test2);
+            f.CreateBlockAsync(test3);
+            f.CreateBlockAsync(test4);
 
         }
 

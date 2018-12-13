@@ -23,12 +23,12 @@ namespace Client.Task
 
         public static void createBlock()
         {
-            GameInfoTaskPrototype f = new GameInfoTaskPrototype();
+           /** GameInfoTaskPrototype f = new GameInfoTaskPrototype();
             BlockFactory factory = new BlockFactory();
             GameInfo test1 = factory.createEnemyD();
             f.ShowGameInfo(test1);
             f.CreateGameInfoAsync(test1);
-
+    */
         }
 
         public void ShowGameInfo(GameInfo gameinfo)
