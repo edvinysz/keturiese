@@ -8,7 +8,6 @@ using Newtonsoft.Json;
 using Server.Models;
 using Client.Task;
 using Server.Observers.Gameplay;
-using Server.Builders.Block;
 using Server.Decorators;
 using Server.AbstractFactory;
 using Server.Adapter;
@@ -52,6 +51,7 @@ namespace GameClient
                 Console.WriteLine("8. Decorator pattern");
                 Console.WriteLine("9. Adapter pattern");
                 Console.WriteLine("A. Proxy pattern");
+                Console.WriteLine("T. Template pattern");
 
                 while (true)
                 {
@@ -83,7 +83,7 @@ namespace GameClient
                             break;
                         case ConsoleKey.D6:
                             Console.WriteLine("Builder pattern");
-                            await executeBuilderPattern();
+                          //  await executeBuilderPattern();
                             break;
 
                         case ConsoleKey.D7:
@@ -101,6 +101,10 @@ namespace GameClient
                         case ConsoleKey.A:
                             Console.WriteLine("Proxy pattern:");
                             await executeProxyPattern();
+                            break;
+                        case ConsoleKey.T:
+                            Console.WriteLine("Template pattern:");
+                            await executeTemplatePattern();
                             break;
                     }
                 }
@@ -186,27 +190,15 @@ namespace GameClient
             gameplayStatusObserver.notifyAll("Game finished");
         }
 
-        static async Task executeBuilderPattern()
+        static async Task executeTemplatePattern()
         {
-            Console.WriteLine("Initialize block builder");
-            HarmfulBlockBuilder harmfulBlockBuilder = new HarmfulBlockBuilder();
-
-            Console.WriteLine("Create blocks through builder");
-            Block deadlyBlock1 = harmfulBlockBuilder.create().setId(15).setName("Smegduobe").setImageId(11)
-                .setWidth(3).setHeight(4).setDamage(22).build();
-
-            Block deadlyBlock2 = harmfulBlockBuilder.create().setId(16).setName("Viniu kalnas").setImageId(21)
-                .setWidth(4).setHeight(10).setDamage(2).build();
-
-            List<Block> blocks = new List<Block>();
-
-            blocks.Add(deadlyBlock1);
-            blocks.Add(deadlyBlock2);
-
-            foreach (Block block in blocks)
-            {
-                Console.WriteLine(block);
-            }
+            Console.WriteLine("Initialize block");
+            BlockFactory factory = new EnemyBlockFactory();
+            Block test = factory.CreateEnemyBlock("Big");
+            Console.WriteLine("Newly created block: " + test.ToString());
+            Console.WriteLine("Using template pattern");
+            test.createBlockTemplate("Deadly", 66, 66, 25);
+            Console.WriteLine("Modified block: " + test.ToString());
         }
 
         static async Task executePrototypePattern()
