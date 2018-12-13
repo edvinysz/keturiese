@@ -11,6 +11,8 @@ using Server.Observers.Gameplay;
 using Server.Decorators;
 using Server.AbstractFactory;
 using Server.Adapter;
+using Server.Iterators;
+using Server.Iterators.Block;
 
 namespace GameClient
 {
@@ -50,8 +52,13 @@ namespace GameClient
                 Console.WriteLine("7. Prototype pattern");
                 Console.WriteLine("8. Decorator pattern");
                 Console.WriteLine("9. Adapter pattern");
+                Console.WriteLine(new string('-', 40));
                 Console.WriteLine("A. Proxy pattern");
+<<<<<<< Updated upstream
                 Console.WriteLine("T. Template pattern");
+=======
+                Console.WriteLine("B. Iterator pattern");
+>>>>>>> Stashed changes
 
                 while (true)
                 {
@@ -102,9 +109,15 @@ namespace GameClient
                             Console.WriteLine("Proxy pattern:");
                             await executeProxyPattern();
                             break;
+<<<<<<< Updated upstream
                         case ConsoleKey.T:
                             Console.WriteLine("Template pattern:");
                             await executeTemplatePattern();
+=======
+                        case ConsoleKey.B:
+                            Console.WriteLine("Iterator pattern:");
+                            await executeIteratorPattern();
+>>>>>>> Stashed changes
                             break;
                     }
                 }
@@ -244,6 +257,25 @@ namespace GameClient
             Console.WriteLine("Decorated with fewer damage:");
             BlockDecorator weakerBlock = new FewerDamage(block);
             Console.WriteLine(weakerBlock);
+        }
+
+        static async Task executeIteratorPattern()
+        {
+            BlockCollection blockCollection = new BlockCollection();
+
+            blockCollection[0] = new Block(1, "Block 1", 0, 0, 0, 0);
+            blockCollection[1] = new Block(2, "Block 2", 0, 0, 0, 0);
+            blockCollection[2] = new Block(3, "Block 3", 0, 0, 0, 0);
+            blockCollection[3] = new Block(4, "Block 4", 0, 0, 0, 0);
+
+            AbstractIterator blockIterator = blockCollection.createIterator();
+
+            object block = blockIterator.first();
+            while (block != null)
+            {
+                Console.WriteLine(block);
+                block = blockIterator.next();
+            }
         }
     }
 }
