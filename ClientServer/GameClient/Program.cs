@@ -51,6 +51,7 @@ namespace GameClient
                 Console.WriteLine("7. Prototype pattern");
                 Console.WriteLine("8. Decorator pattern");
                 Console.WriteLine("9. Adapter pattern");
+                Console.WriteLine("A. Proxy pattern");
 
                 while (true)
                 {
@@ -91,11 +92,15 @@ namespace GameClient
                             break;
                         case ConsoleKey.D8:
                             Console.WriteLine("Decorator pattern");
-                            executeDecoratorPattern();
+                            await executeDecoratorPattern();
                             break;
                         case ConsoleKey.D9:
                             Console.WriteLine("Adapter pattern");
-                            executeAdapterPattern();
+                            await executeAdapterPattern();
+                            break;
+                        case ConsoleKey.A:
+                            Console.WriteLine("Proxy pattern:");
+                            await executeProxyPattern();
                             break;
                     }
                 }
@@ -106,6 +111,18 @@ namespace GameClient
             }
 
             Console.ReadLine();
+        }
+
+        static async Task executeProxyPattern()
+        {
+            Console.WriteLine("get position X : Y");
+            //Position poz = Factory.Get(0);
+            PositionProxy proxy = new PositionProxy();
+            Console.WriteLine(proxy.getPositionX() + " : " + proxy.getPositionY());
+            Console.WriteLine("set position by +25 : +15 = X : Y");
+            proxy.setPositionX(35);
+            proxy.setPositionY(25);
+            Console.WriteLine(proxy.getPositionX() + " : " + proxy.getPositionY());
         }
 
         static async Task executeAdapterPattern()

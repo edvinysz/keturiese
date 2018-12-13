@@ -17,7 +17,7 @@ namespace Server.Models
     /// Factory pattern - Edvinas
     /// </summary>
 
-    class StartingPosition : Position
+    class StartingPosition : Position, GetPositionData
     {
         private long _Id;
         private int _PositionX = 10;
@@ -44,6 +44,28 @@ namespace Server.Models
         {
             get { return _Id; }
             set { _Id = value; }
+        }
+
+        //PROXY
+        public int getPositionX()
+        {
+            return _PositionX;
+        }
+        public int getPositionY()
+        {
+            return _PositionY;
+        }
+
+        public void setPositionX(int x)
+        {
+            //tikrinam jei pozicija nepasikeite ne per daugiau nei ~20px tai tada pakeiciam, kitu atveju ignor hacker
+            if (_PositionX - x <= 20 && _PositionX - x >= -20)
+                _PositionX = x;
+        }
+        public void setPositionY(int y)
+        {
+            if (_PositionY - y <= 20 && _PositionY - y >= -20)
+                _PositionY = y;
         }
     }
 
@@ -106,7 +128,7 @@ namespace Server.Models
             set { _Id = value; }
         }
     }
-
+    
     public static class Factory
     {
         /// <summary>
