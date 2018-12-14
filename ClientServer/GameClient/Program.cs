@@ -14,6 +14,7 @@ using Server.Adapter;
 using Server.Iterators;
 using Server.Iterators.Block;
 using Server.Memento.Player;
+using Server.Mediator;
 
 namespace GameClient
 {
@@ -58,6 +59,7 @@ namespace GameClient
                 Console.WriteLine("T. Template pattern");
                 Console.WriteLine("B. Iterator pattern");
                 Console.WriteLine("C. Memento pattern");
+                Console.WriteLine("D. Mediator pattern");
 
                 while (true)
                 {
@@ -120,6 +122,10 @@ namespace GameClient
                             Console.WriteLine("Memento pattern:");
                             await executeMementoPattern();
                             break;
+                        case ConsoleKey.D:
+                            Console.WriteLine("Mediator pattern:");
+                            await executeMediatorPattern();
+                            break;
                     }
                 }
             }
@@ -129,6 +135,32 @@ namespace GameClient
             }
 
             Console.ReadLine();
+        }
+
+        static async Task executeMediatorPattern()
+        {
+            // Create chatroom
+            Chatroom chatroom = new Chatroom();
+
+            // Create participants and register them
+            Player George = new Beatle("George");
+            Player Paul = new Beatle("Paul");
+            Player Ringo = new Beatle("Ringo");
+            Player John = new Beatle("John");
+            Player Yoko = new NonBeatle("Yoko");
+            
+            chatroom.Register(George);
+            chatroom.Register(Paul);
+            chatroom.Register(Ringo);
+            chatroom.Register(John);
+            chatroom.Register(Yoko);
+            
+            // Chatting participants
+            Yoko.Send("John", "Hi John!");
+            Paul.Send("Ringo", "All you need is love");
+            Ringo.Send("George", "My sweet Lord");
+            Paul.Send("John", "Can't buy me love");
+            John.Send("Yoko", "My sweet love");
         }
 
         static async Task executeProxyPattern()
