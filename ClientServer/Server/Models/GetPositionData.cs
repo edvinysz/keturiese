@@ -10,7 +10,7 @@ namespace Server.Models
         int getPositionX();
         int getPositionY();
 
-        void setPositionX(int x);
-        void setPositionY(int y);
+        //void setPositionX(int x);
+        //void setPositionY(int y);
     }
 }

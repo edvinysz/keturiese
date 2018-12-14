@@ -137,10 +137,6 @@ namespace GameClient
             //Position poz = Factory.Get(0);
             PositionProxy proxy = new PositionProxy();
             Console.WriteLine(proxy.getPositionX() + " : " + proxy.getPositionY());
-            Console.WriteLine("set position by +25 : +15 = X : Y");
-            proxy.setPositionX(35);
-            proxy.setPositionY(25);
-            Console.WriteLine(proxy.getPositionX() + " : " + proxy.getPositionY());
         }
 
         static async Task executeAdapterPattern()

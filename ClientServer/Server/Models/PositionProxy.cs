@@ -19,7 +19,7 @@ namespace Server.Models
             return poz.getPositionY();
         }
 
-        public void setPositionX(int x)
+        /*public void setPositionX(int x)
         {
             poz.setPositionX(x);
         }
@@ -27,6 +27,6 @@ namespace Server.Models
         public void setPositionY(int y)
         {
             poz.setPositionY(y);
-        }
+        }*/
     }
 }
